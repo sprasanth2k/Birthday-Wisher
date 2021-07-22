@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Port+Lligat+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+body
+{
+    background-image: url('/static/images/homeimg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.header
+{
+    background-color: rgba(0,0,0,0.9);
+}
+.heading
+{
+    font-family: Permanent Marker;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
+.logout-btn
+{
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    outline: none;
+    width: 150px;
+    font-weight: 500;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 50px;
+}
+.logout-btn:hover
+{
+    transition-duration: 0.4s;
+    background-color: white;
+    transform: scale(1.1);
+    
+    
+}
+.card-title
+{
+    font-family: Bangers;
+    font-size: 40px;
+}
+.card-text
+{
+    font-family: Port Lligat Sans;
+    font-size: 30px;
+}
+
+a.card-link,
+a.card-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.card
+{
+    border-radius: 15px;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    transition-duration: 0.3s;
+    
+}
+.card:hover
+{
+    transform: scale(1.1); 
+}

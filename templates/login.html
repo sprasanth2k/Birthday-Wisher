@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/images/birthdayicon.png">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+
+<body>
+    {% if result==0 %}
+        <script>
+            window.alert('Invalid username or password!!!')
+        </script>
+    {% endif %}
+    <div class="container pt-5">
+        <div class="row mt-5 g-0">
+            
+            <div class="col-md-5">
+                <img src="/static/images/loginimg.jpg" alt="login-img" class="img-fluid login-img">
+            </div>
+            
+            <div class="col-md-7 login-form">
+                <form action="/login" method="POST" class="offset-1 form-group w-75">
+                    <h1 class="mb-4 mt-4">Sign In</h1>
+                    <div class="mb-3">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" autocomplete="off" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" autocomplete="off" required>
+                    </div>
+                    <div class="mb-4 form-check">
+                        <input type="checkbox" class="form-check-input" id="showpassword" onclick="showPassword()">
+                        <label class="form-check-label" for="showpassword">Show password</label>
+                    </div>
+                    <input type="submit" class="login-btn" value="Login">
+                </form>
+                
+                <div class="offset-1 mt-4">
+                    <a href="/forgotpassword" class="form-link mt-1">Forgot password?</a>
+                    <br>
+                    <b>Don't have an account? </b><a href="/signup" class="form-link ml-1"> Sign Up</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="/static/js/login.js"></script>
+</body>
+</html>
+

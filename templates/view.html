@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/images/birthdayicon.png">
+    <title>View birthdays</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/view.css">
+</head>
+<body>
+    <div class="container">
+        {% if bdays.count()==0 %}
+        <div class="row mt-4">
+            <div class="col-2">
+                <a href="/home" class="back-btn"><span><i class="fas fa-chevron-left"></i> Home</span></a>
+            </div>
+        </div>
+        <div class="row mt-1">
+        <div class="text-center mt-5 pt-5">
+            <h4>There are no birthdays scheduled.Click the <br>button to add one.</h4>
+            <a href="/home/add" class="btn add-btn btn-md mt-4">Add Birthday</a>
+        </div>
+        {% else %}
+        <div class="row mt-4">
+            <div class="col-2">
+                <a href="/home" class="back-btn"><span><i class="fas fa-chevron-left"></i> Home</span></a>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <h4>Scheduled Birthdays</h4>
+            <div class="col-10 offset-md-1">
+                <table class="table table-light mt-2 table-style">
+                    <thead>
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Receiver Email</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in bdays %}
+                        <tr>
+                            <td>{{ row['bdayno'] }}</td>
+                            <td>{{ row['receiver_email'] }}</td>
+                            <td>{{ row['date'] }}</td>
+                            <td>{{ row['time'] }}</td>
+                            <td>
+                                <a href="/home/view/edit/{{row.bdayno}}"><span><i class="fas fa-edit m-1"></i></span></a>
+                                <a href="/home/view/delete/{{row.bdayno}}"><span><i class="fas fa-trash-alt"></i></span></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+        </div>
+        </div>
+        {% endif %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+</body>
+</html>
